@@ -1,0 +1,88 @@
+{
+  "name": "qt-frontend-coding-exercise",
+  "version": "1.0.0",
+  "description": "qt frontend coding exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest src --watchAll --silent",
+    "test:mocks": "jest config/jest/mock-api.spec.js",
+    "start": "node_modules/.bin/webpack serve --mode development --open --hot --host 0.0.0.0",
+    "pull": "git pull --allow-unrelated-histories -s recursive -X ours --no-edit origin",
+    "build": "tsc --project tsconfig.json",
+    "typescript": "node --experimental-modules .scripts/typescript.mjs && npm install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "style-loader": "^1.0.1",
+    "ts-loader": "^9.1.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.36.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.0.1",
+    "@testing-library/react": "10.4.9",
+    "@types/node": "^15.0.1",
+    "@types/react": "^16.14.14",
+    "css-loader": "^3.3.0",
+    "jest": "26.6.3",
+    "jest-expect-message": "^1.0.2",
+    "jest-fetch-mock": "^3.0.3",
+    "jest-junit": "^10.0.0",
+    "lolex": "^5.1.2",
+    "mocker-api": "^2.8.3",
+    "nock": "^11.7.2",
+    "ts-jest": "^26.4.4",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "resolutions": {
+    "http-proxy": "1.18.1"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
+    "automock": false,
+    "collectCoverage": false,
+    "preset": "ts-jest/presets/js-with-ts",
+    "globals": {
+      "ts-jest": {
+        "diagnostics": false
+      }
+    },
+    "testMatch": [
+      "**/?(*.)(spec).+(js|ts)?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "/dist/"
+    ],
+    "setupFilesAfterEnv": [
+      "jest-expect-message",
+      "./config/jest/setup-jest.js"
+    ],
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(t|j)sx?$": "ts-jest",
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/file-transform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  }
+}

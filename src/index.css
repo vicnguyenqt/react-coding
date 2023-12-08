@@ -1,0 +1,73 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.autocomplete-input {
+  display: block;
+  width: 200px;
+  line-height: 24px;
+  padding: 4px 8px;
+  appearance: none;
+  border: 1px solid #999;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+.autocomplete-input:focus {
+  border-color: blue;
+}
+
+.autocomplete-item:focus {
+  border-color: blue;
+  border-bottom-width: 1px;
+}
+
+.autocomplete-item:focus + .autocomplete-item {
+  border-top-width: 0;
+}
+
+.autocomplete-item {
+  border: 1px solid #999;
+  border-bottom-width: 0;
+  padding: 4px 8px;
+  outline: none;
+}
+
+.autocomplete-item:hover {
+  background: #eee;
+}
+
+.autocomplete-item:first-child, :not(.autocomplete-item) + .autocomplete-item {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.autocomplete-item:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-width: 1px;
+}
+
+.loading {
+  width: 100%;
+}
+
+.no-results {
+  padding: 4px 8px;
+}
+
