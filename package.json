@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest src --watchAll --silent",
     "test:mocks": "jest config/jest/mock-api.spec.js",
-    "start": "node_modules/.bin/webpack serve --mode development --open --hot --host 0.0.0.0",
+    "start": "webpack serve --mode development --open --hot --host 0.0.0.0",
     "pull": "git pull --allow-unrelated-histories -s recursive -X ours --no-edit origin",
     "build": "tsc --project tsconfig.json",
     "typescript": "node --experimental-modules .scripts/typescript.mjs && npm install"
